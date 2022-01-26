@@ -1,5 +1,7 @@
 package main
 
+import "math/rand"
+
 type Chromosome []int
 
 //CrossOver Perform Uniform cross over.
@@ -40,4 +42,13 @@ func (parent1 Chromosome) CrossOver(parent2 Chromosome, crossPoint int) Chromoso
 	}
 
 	return offsping
+}
+
+//Shuffle the chromosome order. For initial population.
+func (c *Chromosome) Shuffle() {
+	for i := 0; i < len(*c); i++ {
+		a := rand.Intn(len(*c))
+		b := rand.Intn(len(*c))
+		(*c)[a], (*c)[b] = (*c)[b], (*c)[a]
+	}
 }
