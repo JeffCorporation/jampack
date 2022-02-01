@@ -7,9 +7,6 @@ import (
 	"time"
 )
 
-const EvalWaste = 70
-const EvalStockCount = 30
-
 type StockCut struct {
 	Demand    Parts
 	Inventory Stocks

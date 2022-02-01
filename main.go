@@ -49,4 +49,26 @@ func main() {
 	sc.FirstFitOptimisation()
 	fmt.Println(strings.Repeat("=", 30))
 
+	/* GA */
+	fmt.Println(strings.Repeat("=", 50))
+
+	ga := GAStockCut{
+		PopulationSize:  10,
+		GenerationToRun: 100,
+		Stocks: Stocks{
+			Stock{2300, 4},
+			Stock{3500, 3},
+			Stock{6000, 1},
+			Stock{1200, 5},
+		},
+		Parts: Parts{
+			Part{Length: 1100, Quantity: 5},
+		},
+		Kerf: 3,
+	}
+
+	ga.Run()
+
+	//TODO interface to heuristics StockCut or GAStockcut
+
 }
